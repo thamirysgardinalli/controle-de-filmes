@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+.page-top{
+    background-color: rgba(0, 65, 96, 0.8);
+    height: 50px;
+}
+
+.page-footer{
+    background-color: rgba(0, 65, 96, 0.8);
+    height: 50px;
+}
+
+.font-white{
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.img-responsive{
+    float: left;
+    padding: 10px;
+}
+
+.texto-top{
+    padding: 2px;
+    font-family: sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(114, 30, 36);
+    color: rgb(0,0,0);
+}
+
