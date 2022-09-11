@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bem-vindo',
@@ -9,8 +10,8 @@ export class BemVindoComponent implements OnInit {
 
   isHidePanel;
   
-  constructor() { 
-    this.isHidePanel = true;
+  constructor(private router: Router) { 
+    this.isHidePanel = false;
   }
 
   ngOnInit(): void {

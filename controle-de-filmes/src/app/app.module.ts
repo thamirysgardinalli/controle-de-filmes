@@ -7,6 +7,11 @@ import { FooterComponent } from './footer/footer.component';
 import { TopComponent } from './top/top.component';
 import { MenuComponent } from './menu/menu.component';
 import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
+import { LoginComponent } from './login/login.component';
+import { NenhumFilmeComponent } from './nenhum-filme/nenhum-filme.component';
+import { CadastrarFilmeComponent } from './cadastrar-filme/cadastrar-filme.component';
+import { ListarFilmeComponent } from './listar-filme/listar-filme.component';
+import { ModalMensagemComponent } from './modal-mensagem/modal-mensagem.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { BemVindoComponent } from './bem-vindo/bem-vindo.component';
     FooterComponent,
     TopComponent,
     MenuComponent,
-    BemVindoComponent
+    BemVindoComponent,
+    LoginComponent,
+    NenhumFilmeComponent,
+    CadastrarFilmeComponent,
+    ListarFilmeComponent,
+    ModalMensagemComponent
   ],
   imports: [
     BrowserModule,
