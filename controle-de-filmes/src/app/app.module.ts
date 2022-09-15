@@ -14,6 +14,7 @@ import { CadastrarFilmeComponent } from './cadastrar-filme/cadastrar-filme.compo
 import { ListarFilmeComponent } from './listar-filme/listar-filme.component';
 import { ModalMensagemComponent } from './modal-mensagem/modal-mensagem.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
