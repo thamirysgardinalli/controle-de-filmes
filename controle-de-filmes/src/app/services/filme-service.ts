@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { catchError, Observable } from "rxjs";
 import { Filme } from "../model/filme";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { FilmePromiseService } from "./filme-promise-service";
 
 @Injectable({
@@ -47,6 +47,13 @@ export class FilmeService {
             });
         });
         return p;
+    }
+
+    getById(id: string): Observable<Filme> {
+      const query: HttpParams = new HttpParams().set('id', id);
+      const options = id ? { params: query } : {};
+  
+      return this.httpClient.get<Filme>(`${'http://localhost:3000/filmes'}`, options).pipe();
     }
 
     onDelete(id: string): Observable<Filme> {

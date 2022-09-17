@@ -12,6 +12,24 @@
           <td>{{ f.nome | titlecase }}</td>
           <td>{{ f.genero | titlecase }}</td>
           <td>{{ f.assistido | titlecase }}</td>
+          
+          <td class="right">
+            <a>
+              <i class="material-icons my-icon-size" (click)="onEdit(f)">
+                edit
+              </i>
+            </a>
+          <!--
+            <a
+              ><i
+                class="material-icons my-icon-size"
+                (click)="onDelete(u.username)"
+                >delete</i
+              ></a
+            >
+            -->
+          </td>
+          
         </tr>
       </tbody>
     </table>

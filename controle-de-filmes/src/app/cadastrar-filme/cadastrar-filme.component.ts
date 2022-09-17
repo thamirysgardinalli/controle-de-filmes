@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
 import { Filme } from '../model/filme';
 import { Usuario } from '../model/usuario';
 import { FilmeService } from '../services/filme-service';
 import { NgForm } from '@angular/forms';
 import { Assistido } from '../model/opcoes';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-filme',
@@ -12,7 +13,6 @@ import { Assistido } from '../model/opcoes';
 })
 export class CadastrarFilmeComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
-  //usuario!: Usuario;
   filme!: Filme;
 
   modal = {
@@ -21,10 +21,29 @@ export class CadastrarFilmeComponent implements OnInit {
     text: '',
   };
 
-  constructor(private filmeService: FilmeService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private filmeService: FilmeService
+  ) 
+  {
+    this.filme = new Filme();
+  }
 
-  ngOnInit(): void {
-    this.filme = new Filme('', '', 0, '', Assistido.queroAssistir);
+  ngOnInit() {
+    if (this.route.snapshot.params['id'] != null){
+      let idFilme = this.route.snapshot.params['id'];
+
+      this.filmeService.getById(idFilme).subscribe({
+        next: (data) => {
+          this.filme = data;
+        },
+        error: (error) => {
+          alert('Não foi possível buscar os dados do filme');
+        }
+      });
+    } else {
+      this.filme = new Filme();
+    }
   }
 
   onSubmit() {
