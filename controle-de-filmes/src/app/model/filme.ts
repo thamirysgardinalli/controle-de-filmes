@@ -1,15 +1,14 @@
 import { Assistido } from "./opcoes";
 
 export class Filme {
-    public id: string;
-    public nome: string;
-    public genero: string;
-    public anoLancamento: number;
-    public diretor: string;
-    public assistido: Assistido;
-    public idUsuario!: string;
+    public id?: string;
+    public nome?: string;
+    public genero?: string;
+    public anoLancamento?: number;
+    public diretor?: string;
+    public assistido?: Assistido;
 
-    constructor(nome: string, genero: string, anoLancamento: number, diretor: string, assistido: Assistido){
+    constructor(nome?: string, genero?: string, anoLancamento?: number, diretor?: string, assistido?: Assistido){
         this.id = String(Math.round(Math.random() * 1000));
         this.nome = nome;
         this.genero = genero;

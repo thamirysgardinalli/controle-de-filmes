@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Filme } from '../model/filme';
 import { Assistido } from '../model/opcoes';
 import { FilmePromiseService } from '../services/filme-promise-service';
@@ -15,7 +16,8 @@ export class ListarFilmeComponent implements OnInit {
 
   constructor(
     private filmePromiseService: FilmePromiseService, 
-    private filmeService: FilmeService
+    private filmeService: FilmeService,
+    private router: Router
   ) 
   {
     this.filme = new Filme('', '', 0, '', Assistido.queroAssistir);
@@ -33,12 +35,11 @@ export class ListarFilmeComponent implements OnInit {
   }
 
   onEdit(filme: Filme){
-    let cloneFilme: Filme = Filme.clone(filme);
-    this.filme = cloneFilme;
+    this.router.navigate(['/cadastrar', {id: filme.id}]);
   }
 
-  onDelete(id: number) {
-    this.filmeService.onDelete(this.filme.id);
+  onDelete(id: string) {
+    this.filmeService.onDelete(id);
   }
 
 }
