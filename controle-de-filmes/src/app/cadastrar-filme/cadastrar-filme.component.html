@@ -1,0 +1,87 @@
+<app-modal-mensagem [show]="modal.show" [content]="modal" (closeEvent)="onCloseModal()">
+</app-modal-mensagem>
+<div class="cadastro-filme">
+    <div class="col s12 center">
+        <div class="texto-bem-vindo">
+            CADASTRO DE FILMES
+        </div>
+        <div>
+            <p>Cadastro de Filmes</p>
+        </div>
+        <div class="row">
+            <form class="col s12" #form="ngForm" (submit)="onSubmit()">
+              <div class="input-field col s12">
+                <input
+                  id="input-nome"
+                  name="input-nome"
+                  type="text"
+                  class="validate"
+                  [(ngModel)]="this.filme.nome"
+                  #nome="ngModel"
+                  required
+                />
+                <label for="input-nome">Nome *</label>
+                <div class="red-text" [hidden]="nome.valid || nome.untouched">
+                  Informe o nome do filme.
+                </div>
+              </div>
+              <div class="input-field col s12">
+                <input
+                  id="input-genero"
+                  name="input-genero"
+                  type="text"
+                  class="validate"
+                  [(ngModel)]="this.filme.genero"
+                  #genero="ngModel"
+                  required
+                />
+                <label for="input-genero">Gênero *</label>
+                <div class="red-text" [hidden]="genero.valid || genero.untouched">
+                  Informe o gênero do filme.
+                </div>
+              </div>
+              <div class="input-field col s12">
+                <input
+                  id="input-anoLancamento"
+                  name="input-anoLancamento"
+                  type="number"
+                  class="validate"
+                  [(ngModel)]="this.filme.anoLancamento"
+                  #anoLancamento="ngModel"
+                />
+                <label for="input-anoLancamento">Ano de Lançamento</label>
+              </div>
+              <div class="input-field col s12">
+                <input
+                  id="input-diretor"
+                  name="input-diretor"
+                  type="text"
+                  class="validate"
+                  pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
+                  [(ngModel)]="this.filme.diretor"
+                  #diretor="ngModel"
+                />
+                <label for="input-diretor">Diretor</label>
+              </div>
+              <div class="input-field col s12">
+                <label for="select-assistido" class="active">Assistido</label>
+        
+                <select
+                  id="select-assistido"
+                  class="browser-default select validate"
+                  (change)="this.onAssistidoChange($event)"
+                  required
+                >
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option value="Assistido">Assistido</option>
+                  <option value="QueroAssistir">Quero Assistir</option>
+                </select>
+              </div>
+            </form>
+        <div>
+            <button class="btn waves-effect waves-light indigo" [disabled]="!form.valid" (click)="onSubmit()">
+                Salvar
+            </button>
+        </div>
+    </div>
+</div>

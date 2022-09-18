@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.css";
+@import "~material-icons/iconfont/material-icons.css";
+
+:root {
+    --cor-principal:  rgba(0, 65, 96, 0.8);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+}
+
+.botao{
+    margin: 2px;
+}
+
+.font-white{
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+}
+
+.img-responsive{
+    padding: 10px;
+    height: 60px;
+}
+
+.texto-bem-vindo{
+    padding: 2px;
+    font-family: sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(114, 30, 36);
+    color: rgb(0,0,0);
+}
+
+.texto-top{
+    padding: 2px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    -webkit-text-stroke: 1px rgb(114, 30, 36);
+    color: rgb(0,0,0);
+}

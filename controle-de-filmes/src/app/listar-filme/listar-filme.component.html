@@ -1,0 +1,42 @@
+<h5 class="text-bem-vindo">FILMES CADASTRADOS</h5>
+    <table class="highlight" *ngIf="filmes && filmes!.length > 0">
+      <thead>
+        <tr>
+          <th>Filme</th>
+          <th></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let f of filmes">
+          <td>{{ f.nome | titlecase }}</td>
+          <td>{{ f.genero | titlecase }}</td>
+          <td>{{ f.assistido | titlecase }}</td>
+          
+          <td class="right">
+            <a>
+              <i class="material-icons my-icon-size" (click)="onEdit(f)">
+                edit
+              </i>
+            </a>
+            <a>
+              <i class="material-icons my-icon-size" (click)="onDelete(f.id)">
+                delete
+              </i>
+            </a>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="!filmes || filmes!.length == 0">
+      <div class="row">
+        <div class="center-align">
+          <i class="col s12 material-icons large">mood_bad</i>
+          <span class="col s12 flow-text"> 
+            Não encontramos nada :( Para novos cadastros acesso o menu Cadastrar
+          </span>
+        </div>
+      </div>
+    </div>
