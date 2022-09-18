@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Filme } from '../model/filme';
@@ -38,8 +39,25 @@ export class ListarFilmeComponent implements OnInit {
     this.router.navigate(['/cadastrar', {id: filme.id}]);
   }
 
-  onDelete(id: string) {
-    this.filmeService.onDelete(id);
+  onDelete(id?: string) {
+    if (id != null){
+      this.filmeService.onDelete(id!).subscribe({
+        next: (data) => {
+          alert('O filme foi excluído!');
+          this.filmePromiseService.getAll().subscribe({
+            next: (data) => {
+              this.filmes = data;
+            },
+            error: (error) => {
+              alert(error);
+            },
+          });
+        },
+        error: (error) => {
+          alert(error);
+        },
+      });
+    }
   }
 
 }

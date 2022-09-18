@@ -53,10 +53,10 @@ export class FilmeService {
       const query: HttpParams = new HttpParams().set('id', id);
       const options = id ? { params: query } : {};
   
-      return this.httpClient.get<Filme>(`${'http://localhost:3000/filmes'}`, options).pipe();
+      return this.httpClient.get<Filme>(`${this.URL}`, options).pipe();
     }
 
     onDelete(id: string): Observable<Filme> {
-        return this.httpClient.delete<Filme>(`${this.URL}/${id}`, this.httpOptions);
+      return this.httpClient.delete<Filme>(`${this.URL}/${id}`, this.httpOptions);
     }
 }
