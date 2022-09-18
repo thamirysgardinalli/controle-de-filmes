@@ -5,7 +5,7 @@ Este projeto foi desenvolvido com intuito de apresentar um controle de filmes as
 # Protótipo
 https://www.figma.com/file/QmRJn72z20xSg0leOUY67Y/controle-de-filmes?node-id=2%3A9
 
-#Link do Github Pages:
+# Link do Github Pages:
 https://thamirysgardinalli.github.io/controle-de-filmes/inicio
 
 # Checklist
