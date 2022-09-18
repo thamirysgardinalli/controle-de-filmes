@@ -1,14 +1,6 @@
 {
   "filmes": [
     {
-      "id": "256",
-      "nome": "Os Vingadores",
-      "genero": "Ação",
-      "anoLancamento": 2012,
-      "diretor": "Joss Whedon",
-      "assistido": "QueroAssistir"
-    },
-    {
       "id": "436",
       "nome": "Click",
       "genero": "Comédia",

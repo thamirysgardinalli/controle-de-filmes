@@ -57,13 +57,14 @@
                   name="input-diretor"
                   type="text"
                   class="validate"
+                  pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"
                   [(ngModel)]="this.filme.diretor"
                   #diretor="ngModel"
                 />
                 <label for="input-diretor">Diretor</label>
               </div>
               <div class="input-field col s12">
-                <label for="select-assistido" class="active">Assistido *</label>
+                <label for="select-assistido" class="active">Assistido</label>
         
                 <select
                   id="select-assistido"
@@ -78,7 +79,7 @@
               </div>
             </form>
         <div>
-            <button class="btn waves-effect waves-light indigo" (click)="onSubmit()">
+            <button class="btn waves-effect waves-light indigo" [disabled]="!form.valid" (click)="onSubmit()">
                 Salvar
             </button>
         </div>

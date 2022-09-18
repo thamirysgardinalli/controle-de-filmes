@@ -1,8 +1,7 @@
 import { Component, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
 import { Filme } from '../model/filme';
-import { Usuario } from '../model/usuario';
 import { FilmeService } from '../services/filme-service';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 import { Assistido } from '../model/opcoes';
 import { ActivatedRoute } from '@angular/router';
 
@@ -50,7 +49,7 @@ export class CadastrarFilmeComponent implements OnInit {
     this.filmeService
       .do(this.filme)
       .then(() => {
-        this.onSucesso()
+        this.onSucesso();
       })
       .catch((e) => {
         this.modal.show = true;
